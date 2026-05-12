@@ -138,3 +138,16 @@ window.addEventListener("click", (e) => {
   }
 
 });
+
+
+function calcularAgua(){
+
+  let hectares = document.getElementById("hectares").value;
+
+  let economia = hectares * 5000;
+
+  document.getElementById("resultado").innerHTML =
+  "💧 Com sustentabilidade você pode economizar aproximadamente " 
+  + economia + " litros de água por ano.";
+
+}
