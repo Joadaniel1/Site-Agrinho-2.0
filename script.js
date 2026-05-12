@@ -186,3 +186,49 @@ function toggleWiki(card){
   card.classList.toggle("active");
 
 }
+
+
+// BOTÃO TOPO
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 300){
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+
+});
+
+function voltarTopo(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+// animação scroll premium
+
+function reveal(){
+
+  const items = document.querySelectorAll(".reveal");
+
+  items.forEach(el => {
+
+    const top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 80){
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
