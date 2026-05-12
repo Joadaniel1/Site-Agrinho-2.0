@@ -93,3 +93,48 @@ function animarContador(id, maximo){
 animarContador("contador1", 5000);
 animarContador("contador2", 12000);
 animarContador("contador3", 350);
+
+// ADICIONE ISSO NO FINAL DO script.js
+
+// MODAL
+
+const modal = document.getElementById("modal");
+
+const modalTitulo =
+document.getElementById("modalTitulo");
+
+const modalTexto =
+document.getElementById("modalTexto");
+
+const modalFonte =
+document.getElementById("modalFonte");
+
+function abrirModal(titulo, texto, fonte){
+
+  modal.classList.add("active");
+
+  modalTitulo.innerHTML = titulo;
+
+  modalTexto.innerHTML = texto;
+
+  modalFonte.innerHTML = fonte;
+
+}
+
+function fecharModal(){
+
+  modal.classList.remove("active");
+
+}
+
+// FECHAR AO CLICAR FORA
+
+window.addEventListener("click", (e) => {
+
+  if(e.target === modal){
+
+    fecharModal();
+
+  }
+
+});
