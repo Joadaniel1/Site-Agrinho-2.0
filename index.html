@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page - Cursos Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header role="banner">
+    <nav aria-label="Menu Principal">
+      <h1 id="logo">WebCursos</h1>
+      <ul class="nav-links">
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <button id="toggle-contrast" aria-label="Ativar alto contraste">🌓</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main role="main">
+    <!-- Hero Section -->
+    <section id="hero" aria-label="Seção Principal">
+      <h2>Aprenda Desenvolvimento Web do Zero ao Avançado</h2>
+      <p>Cursos interativos, acessíveis e voltados para o mercado.</p>
+      <a href="#cursos" class="btn">Ver Cursos</a>
+    </section>
+
+    <!-- Cursos Section -->
+    <section id="cursos" aria-label="Cursos Disponíveis">
+      <h2>Cursos</h2>
+      <div class="cursos-grid" aria-live="polite">
+        <!-- Cards serão inseridos via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" aria-label="Galeria de Projetos">
+      <h2>Galeria</h2>
+      <div class="carousel" aria-roledescription="carousel">
+        <button class="prev" aria-label="Slide anterior">◀</button>
+        <div class="carousel-track">
+          <!-- Slides serão gerados pelo JS -->
+        </div>
+        <button class="next" aria-label="Próximo slide">▶</button>
+      </div>
+    </section>
+
+    <!-- FAQ / Acordeão Section -->
+    <section id="faq" aria-label="Perguntas Frequentes">
+      <h2>Perguntas Frequentes</h2>
+      <div class="accordion">
+        <!-- Itens serão gerados via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 WebCursos. Todos os direitos reservados.</p>
+    <div class="font-size-controls">
+      <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+      <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
