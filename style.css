@@ -576,3 +576,32 @@ footer h2{
 
   cursor:pointer;
 }
+/* TIMELINE */
+
+.timeline-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.timeline-item{
+  background:var(--branco);
+  padding:30px;
+  width:300px;
+
+  border-radius:20px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+
+  transition:0.3s;
+}
+
+.timeline-item:hover{
+  transform:translateY(-10px);
+}
+
+.timeline-item h3{
+  color:var(--verde);
+  margin-bottom:10px;
+}
