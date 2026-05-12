@@ -861,3 +861,85 @@ body::before{
 .hero{
   background-attachment:fixed;
 }
+
+
+/* ===== PRELOADER ===== */
+
+.preloader{
+  position:fixed;
+  inset:0;
+  background:#1b5e20;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.loader-box{
+  text-align:center;
+  color:white;
+}
+
+.loader-box .leaf{
+  width:60px;
+  height:60px;
+  background:#9be15d;
+  margin:auto;
+  border-radius:0 50%;
+  animation:spin 1s infinite alternate;
+}
+
+@keyframes spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(45deg); }
+}
+
+
+.campeao-text{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.campeao-boxes{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.box{
+  background:var(--branco);
+  padding:30px;
+  width:280px;
+
+  border-radius:20px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+  transition:0.4s;
+}
+
+.box:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+.box h3{
+  color:#2e7d32;
+}
+
+
+/* suaviza tudo */
+
+*{
+  scroll-behavior:smooth;
+}
+
+/* transições gerais melhores */
+a, button, .card, .box{
+  transition:0.3s ease;
+}
