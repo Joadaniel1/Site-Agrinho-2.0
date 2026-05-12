@@ -171,3 +171,11 @@ function revealScroll(){
 
 window.addEventListener("scroll", revealScroll);
 revealScroll();
+
+
+function toggleMenu(){
+
+  document.getElementById("menu")
+  .classList.toggle("active");
+
+}
