@@ -179,3 +179,10 @@ function toggleMenu(){
   .classList.toggle("active");
 
 }
+
+
+function toggleWiki(card){
+
+  card.classList.toggle("active");
+
+}
