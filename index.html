@@ -204,6 +204,153 @@
 
   </section>
 
+<!-- ADICIONE ISSO NO index.html -->
+
+<!-- COLOQUE ESSA SECTION ABAIXO DA SECTION TECNOLOGIA -->
+
+<section class="section curiosidades-section" id="curiosidades">
+
+  <h2 class="title reveal">
+    Curiosidades do Agro Sustentável
+  </h2>
+
+  <div class="curiosidades-grid">
+
+    <div class="curiosidade-card reveal">
+
+      <div class="curiosidade-topo">
+        <span>🌱</span>
+        <h3>Agricultura Sustentável</h3>
+      </div>
+
+      <p>
+        A agricultura sustentável busca produzir alimentos sem prejudicar
+        os recursos naturais, preservando o solo, a água e as florestas.
+      </p>
+
+      <button class="btn-curiosidade"
+      onclick="abrirModal(
+      'Agricultura Sustentável',
+      'A agricultura sustentável utiliza técnicas que reduzem impactos ambientais, como rotação de culturas, preservação de nascentes e uso consciente da água. Esse modelo ajuda a garantir alimento para as futuras gerações.',
+      'EMBRAPA'
+      )">
+
+        Ler mais
+
+      </button>
+
+    </div>
+
+    <div class="curiosidade-card reveal">
+
+      <div class="curiosidade-topo">
+        <span>💧</span>
+        <h3>Economia de Água</h3>
+      </div>
+
+      <p>
+        Sistemas inteligentes ajudam produtores a economizar milhares de litros.
+      </p>
+
+      <button class="btn-curiosidade"
+      onclick="abrirModal(
+      'Economia de Água',
+      'A irrigação inteligente monitora a quantidade necessária de água para cada plantação. Isso evita desperdícios e ajuda na preservação hídrica.',
+      'Agência Nacional de Águas (ANA)'
+      )">
+
+        Ler mais
+
+      </button>
+
+    </div>
+
+    <div class="curiosidade-card reveal">
+
+      <div class="curiosidade-topo">
+        <span>☀️</span>
+        <h3>Energia Solar</h3>
+      </div>
+
+      <p>
+        Fazendas utilizam energia solar para reduzir impactos ambientais.
+      </p>
+
+      <button class="btn-curiosidade"
+      onclick="abrirModal(
+      'Energia Solar no Campo',
+      'A energia solar é uma alternativa limpa que reduz custos e diminui a emissão de poluentes no meio ambiente.',
+      'Portal Solar'
+      )">
+
+        Ler mais
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- DICAS -->
+
+  <div class="dicas reveal">
+
+    <h2>💡 Dicas para um Futuro Sustentável</h2>
+
+    <div class="dicas-grid">
+
+      <div class="dica-box">
+        <span>🌳</span>
+        <p>Preserve árvores e nascentes.</p>
+      </div>
+
+      <div class="dica-box">
+        <span>💧</span>
+        <p>Evite desperdício de água.</p>
+      </div>
+
+      <div class="dica-box">
+        <span>♻️</span>
+        <p>Faça descarte correto de resíduos.</p>
+      </div>
+
+      <div class="dica-box">
+        <span>☀️</span>
+        <p>Utilize energia limpa sempre que possível.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <button class="fechar" onclick="fecharModal()">
+      ✖
+    </button>
+
+    <h2 id="modalTitulo"></h2>
+
+    <p id="modalTexto"></p>
+
+    <div class="fonte">
+
+      <strong>Fonte da informação:</strong>
+
+      <span id="modalFonte"></span>
+
+    </div>
+
+  </div>
+
+</div>
+  
   <!-- CONTADOR -->
 
   <section class="counter-section">
