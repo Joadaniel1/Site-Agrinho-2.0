@@ -730,3 +730,74 @@ footer h2{
 .aplicacao li{
   margin-bottom:10px;
 }
+
+/* PREMIUM ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+#topBtn{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+
+  background:#2e7d32;
+  color:white;
+
+  border:none;
+  padding:15px 18px;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  display:none;
+
+  font-size:18px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+.global-text{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.global-cards{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.gcard{
+  background:var(--branco);
+  padding:30px;
+  width:280px;
+
+  border-radius:20px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+
+  transition:0.3s;
+}
+
+.gcard:hover{
+  transform:translateY(-10px);
+}
+
+.gcard h3{
+  color:#2e7d32;
+}
