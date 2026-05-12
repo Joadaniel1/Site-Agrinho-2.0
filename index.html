@@ -1,73 +1,268 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - Cursos Web</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Agro Forte | Futuro Sustentável</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header role="banner">
-    <nav aria-label="Menu Principal">
-      <h1 id="logo">WebCursos</h1>
-      <ul class="nav-links">
-        <li><a href="#cursos">Cursos</a></li>
+  <!-- LOADER -->
+
+  <div class="loader">
+    <div class="leaf"></div>
+  </div>
+
+  <!-- HEADER -->
+
+  <header class="hero">
+
+    <nav class="navbar">
+
+      <div class="logo">
+        🌱 AGRINHO
+      </div>
+
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#impactos">Impactos</a></li>
+        <li><a href="#tecnologia">Tecnologia</a></li>
         <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#contato">Contato</a></li>
       </ul>
-      <button id="toggle-contrast" aria-label="Ativar alto contraste">🌓</button>
+
     </nav>
+
+    <div class="hero-content">
+
+      <span class="tag">
+        AGRONEGÓCIO + SUSTENTABILIDADE
+      </span>
+
+      <h1>
+        Agro forte,
+        futuro sustentável
+      </h1>
+
+      <p>
+        Equilíbrio entre produção agrícola,
+        tecnologia e preservação ambiental.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#sobre" class="btn">
+          Explorar Projeto
+        </a>
+
+        <button class="btn-outline" id="modoBtn">
+          🌙 Modo Escuro
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="wave"></div>
+
   </header>
 
-  <!-- Main Content -->
-  <main role="main">
-    <!-- Hero Section -->
-    <section id="hero" aria-label="Seção Principal">
-      <h2>Aprenda Desenvolvimento Web do Zero ao Avançado</h2>
-      <p>Cursos interativos, acessíveis e voltados para o mercado.</p>
-      <a href="#cursos" class="btn">Ver Cursos</a>
-    </section>
+  <!-- SOBRE -->
 
-    <!-- Cursos Section -->
-    <section id="cursos" aria-label="Cursos Disponíveis">
-      <h2>Cursos</h2>
-      <div class="cursos-grid" aria-live="polite">
-        <!-- Cards serão inseridos via JavaScript -->
+  <section class="section" id="sobre">
+
+    <div class="container">
+
+      <div class="text reveal">
+
+        <h2>Sobre o Projeto</h2>
+
+        <p>
+          O agronegócio é uma das principais atividades econômicas do Brasil,
+          responsável pela produção de alimentos e geração de empregos.
+        </p>
+
+        <p>
+          Porém, para garantir um futuro sustentável,
+          é necessário unir desenvolvimento agrícola e preservação ambiental.
+        </p>
+
+        <p>
+          Este projeto apresenta soluções sustentáveis
+          que ajudam a proteger o meio ambiente
+          sem comprometer a produção no campo.
+        </p>
+
       </div>
-    </section>
 
-    <!-- Galeria Section -->
-    <section id="galeria" aria-label="Galeria de Projetos">
-      <h2>Galeria</h2>
-      <div class="carousel" aria-roledescription="carousel">
-        <button class="prev" aria-label="Slide anterior">◀</button>
-        <div class="carousel-track">
-          <!-- Slides serão gerados pelo JS -->
-        </div>
-        <button class="next" aria-label="Próximo slide">▶</button>
+      <div class="image reveal">
+        <img src="assets/agro.jpg" alt="Agro sustentável">
       </div>
-    </section>
 
-    <!-- FAQ / Acordeão Section -->
-    <section id="faq" aria-label="Perguntas Frequentes">
-      <h2>Perguntas Frequentes</h2>
-      <div class="accordion">
-        <!-- Itens serão gerados via JS -->
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <p>&copy; 2026 WebCursos. Todos os direitos reservados.</p>
-    <div class="font-size-controls">
-      <button id="increase-font" aria-label="Aumentar fonte">A+</button>
-      <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
     </div>
+
+  </section>
+
+  <!-- IMPACTOS -->
+
+  <section class="section green" id="impactos">
+
+    <h2 class="title reveal">
+      Sustentabilidade no Campo
+    </h2>
+
+    <div class="cards">
+
+      <div class="card reveal">
+
+        <div class="icon">🌳</div>
+
+        <h3>Preservação Ambiental</h3>
+
+        <p>
+          Proteção das florestas,
+          rios e nascentes para manter
+          o equilíbrio ecológico.
+        </p>
+
+      </div>
+
+      <div class="card reveal">
+
+        <div class="icon">💧</div>
+
+        <h3>Economia de Água</h3>
+
+        <p>
+          Sistemas inteligentes de irrigação
+          reduzem desperdícios e preservam recursos naturais.
+        </p>
+
+      </div>
+
+      <div class="card reveal">
+
+        <div class="icon">☀️</div>
+
+        <h3>Energia Limpa</h3>
+
+        <p>
+          Uso de energia solar para diminuir
+          impactos ambientais e custos no campo.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TECNOLOGIA -->
+
+  <section class="section" id="tecnologia">
+
+    <div class="container reverse">
+
+      <div class="image reveal">
+        <img src="assets/solar.jpg" alt="Tecnologia no agro">
+      </div>
+
+      <div class="text reveal">
+
+        <h2>Tecnologia no Agro</h2>
+
+        <p>
+          Máquinas modernas, drones e sistemas digitais ajudam
+          produtores a aumentar a produtividade de forma sustentável.
+        </p>
+
+        <p>
+          A tecnologia permite monitorar plantações,
+          reduzir desperdícios e preservar o solo.
+        </p>
+
+        <button class="btn" onclick="mostrarMensagem()">
+          Mostrar Curiosidade
+        </button>
+
+        <div id="mensagem"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTADOR -->
+
+  <section class="counter-section">
+
+    <div class="counter-box reveal">
+      <h2 id="contador1">0</h2>
+      <p>Árvores preservadas</p>
+    </div>
+
+    <div class="counter-box reveal">
+      <h2 id="contador2">0</h2>
+      <p>Litros de água economizados</p>
+    </div>
+
+    <div class="counter-box reveal">
+      <h2 id="contador3">0</h2>
+      <p>Fazendas sustentáveis</p>
+    </div>
+
+  </section>
+
+  <!-- GALERIA -->
+
+  <section class="section green" id="galeria">
+
+    <h2 class="title reveal">
+      Galeria Sustentável
+    </h2>
+
+    <div class="gallery">
+
+      <img src="assets/agro.jpg" alt="">
+      <img src="assets/campo.jpg" alt="">
+      <img src="assets/solar.jpg" alt="">
+      <img src="assets/agro2.jpg" alt="">
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>Projeto AGRINHO 2026</h2>
+
+    <p>
+      Agro forte, futuro sustentável:
+      equilíbrio entre produção e meio ambiente.
+    </p>
+
+    <span>
+      Desenvolvido por: Seu Nome
+    </span>
+
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
+
 </body>
+
 </html>
