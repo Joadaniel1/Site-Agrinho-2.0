@@ -605,3 +605,22 @@ footer h2{
   color:var(--verde);
   margin-bottom:10px;
 }
+
+
+.sim-box{
+  text-align:center;
+  background:var(--branco);
+  padding:40px;
+  border-radius:20px;
+  max-width:500px;
+  margin:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sim-box input{
+  padding:12px;
+  width:80%;
+  margin-top:15px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
