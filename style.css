@@ -801,3 +801,63 @@ footer h2{
 .gcard h3{
   color:#2e7d32;
 }
+
+/* ===== EFEITO 3D NAS CARDS ===== */
+
+.card,
+.wiki-card,
+.gcard,
+.timeline-item,
+.curiosidade-card{
+  transform-style:preserve-3d;
+  transition:0.4s ease;
+  will-change:transform;
+}
+
+.card:hover,
+.wiki-card:hover,
+.gcard:hover,
+.timeline-item:hover,
+.curiosidade-card:hover{
+  transform:
+    perspective(1000px)
+    rotateX(6deg)
+    rotateY(-6deg)
+    translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card::before,
+.wiki-card::before,
+.gcard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top left, rgba(255,255,255,0.3), transparent);
+  opacity:0;
+  transition:0.4s;
+}
+
+.card:hover::before,
+.wiki-card:hover::before,
+.gcard:hover::before{
+  opacity:1;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(46,125,50,0.08), transparent),
+    radial-gradient(circle at 80% 80%, rgba(76,175,80,0.08), transparent);
+
+  z-index:-1;
+}
+
+
+/* ===== PARALLAX ===== */
+
+.hero{
+  background-attachment:fixed;
+}
