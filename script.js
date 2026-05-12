@@ -232,3 +232,17 @@ function reveal(){
 
 window.addEventListener("scroll", reveal);
 reveal();
+
+
+// ===== PRELOADER =====
+
+window.addEventListener("load", () => {
+
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+  }, 1200);
+
+});
