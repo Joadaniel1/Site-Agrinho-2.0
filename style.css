@@ -988,3 +988,75 @@ a, button, .card, .box{
 .resumo-box p{
   margin-bottom:15px;
 }
+
+
+/* ===== AJUSTE FINAL MOBILE ===== */
+
+@media (max-width: 768px){
+
+  /* títulos menores */
+  .title{
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* textos mais confortáveis */
+  p{
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  /* cards viram coluna */
+  .cards,
+  .wiki-grid,
+  .campeao-boxes,
+  .global-cards{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* cards ocupam mais espaço */
+  .card,
+  .wiki-card,
+  .gcard,
+  .box,
+  .timeline-item{
+    width: 90%;
+  }
+
+  /* mapa fica em coluna */
+  .mapa-container{
+    flex-direction: column;
+  }
+
+  .mapa-imagem img{
+    width: 90%;
+  }
+
+  /* gráfico ajusta */
+  .grafico-container{
+    width: 95%;
+  }
+
+  /* simulador */
+  .sim-box{
+    width: 90%;
+    padding: 25px;
+  }
+
+  /* botão topo e música não atrapalham */
+  #topBtn,
+  #btnMusica{
+    right: 15px;
+    bottom: 15px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* menu mobile caso exista */
+  .menu{
+    width: 100%;
+    text-align: center;
+  }
+
+}
