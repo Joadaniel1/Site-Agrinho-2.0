@@ -667,3 +667,46 @@ footer h2{
 .forest{
   background:#43a047;
 }
+
+
+.wiki-grid{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.wiki-card{
+  width:320px;
+  background:var(--branco);
+  padding:25px;
+  border-radius:20px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.wiki-card:hover{
+  transform:scale(1.03);
+}
+
+.wiki-conteudo{
+  display:none;
+  margin-top:15px;
+  line-height:1.6;
+}
+
+.wiki-card.active .wiki-conteudo{
+  display:block;
+}
+
+.wiki-resumo{
+  color:gray;
+  margin-top:10px;
+}
+
+.fonte{
+  margin-top:10px;
+  font-size:12px;
+  color:#2e7d32;
+}
