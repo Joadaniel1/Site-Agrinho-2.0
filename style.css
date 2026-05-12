@@ -1,0 +1,241 @@
+/* ========================================
+   DESIGN SYSTEM - Variáveis Globais
+======================================== */
+:root {
+  /* Cores */
+  --primary-color: #2a9d8f;
+  --secondary-color: #e9c46a;
+  --background-color: #fefefe;
+  --text-color: #333333;
+  --contrast-bg: #000000;
+  --contrast-text: #ffffff;
+
+  /* Tipografia */
+  --font-family: 'Arial', sans-serif;
+  --base-font-size: 16px;
+
+  /* Espaçamentos */
+  --spacing: 1rem;
+  --radius: 8px;
+}
+
+/* ========================================
+   RESET E ESTILOS GLOBAIS
+======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Scroll suave para links internos */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+header {
+  background-color: var(--primary-color);
+  padding: var(--spacing);
+  color: white;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing);
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+#toggle-contrast {
+  background: none;
+  border: 2px solid white;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--secondary-color);
+  color: #111;
+}
+
+#hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ========================================
+   CURSOS GRID
+======================================== */
+/* Área dos cursos */
+.cursos-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* MOBILE-FIRST */
+  gap: var(--spacing);
+  padding: 2rem;
+}
+
+/* Cards dos cursos */
+.curso-card {
+  background-color: white;
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ========================================
+   CAROUSEL / GALERIA
+======================================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* ========================================
+   ACORDEÃO / FAQ
+======================================== */
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+  padding: var(--spacing);
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f5f5f5;
+  padding: 0 var(--spacing);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.font-size-controls button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+/* ========================================
+   MODO ALTO CONTRASTE
+======================================== */
+body.high-contrast {
+  background-color: var(--contrast-bg);
+  color: var(--contrast-text);
+}
+
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .accordion-header,
+body.high-contrast .btn,
+body.high-contrast .carousel button {
+  background-color: var(--contrast-text);
+  color: var(--contrast-bg);
+}
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+@media (min-width: 600px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cursos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
