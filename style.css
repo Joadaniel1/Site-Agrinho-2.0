@@ -624,3 +624,17 @@ footer h2{
   border-radius:10px;
   border:1px solid #ccc;
 }
+
+
+@media(max-width:600px){
+
+  .hero-content h1{
+    font-size:35px;
+  }
+
+  .timeline-container{
+    flex-direction:column;
+    align-items:center;
+  }
+
+}
