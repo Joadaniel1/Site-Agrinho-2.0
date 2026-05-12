@@ -377,3 +377,202 @@ footer h2{
   }
 
 }
+
+/* ADICIONE ISSO NO FINAL DO style.css */
+
+/* CURIOSIDADES */
+
+.curiosidades-grid{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.curiosidade-card{
+  width:340px;
+  background:var(--branco);
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+  transition:0.4s;
+}
+
+.curiosidade-card:hover{
+  transform:translateY(-10px);
+}
+
+.curiosidade-topo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  margin-bottom:20px;
+}
+
+.curiosidade-topo span{
+  font-size:40px;
+}
+
+.curiosidade-topo h3{
+  color:var(--verde);
+}
+
+.btn-curiosidade{
+  margin-top:20px;
+
+  background:var(--verde);
+
+  color:white;
+
+  border:none;
+
+  padding:12px 25px;
+
+  border-radius:40px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.btn-curiosidade:hover{
+  background:var(--verde-escuro);
+}
+
+/* DICAS */
+
+.dicas{
+  margin-top:100px;
+}
+
+.dicas h2{
+  text-align:center;
+  color:var(--verde);
+  margin-bottom:50px;
+  font-size:42px;
+}
+
+.dicas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.dica-box{
+  background:var(--branco);
+
+  padding:30px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+  transition:0.4s;
+}
+
+.dica-box:hover{
+  transform:scale(1.03);
+}
+
+.dica-box span{
+  font-size:45px;
+  display:block;
+  margin-bottom:15px;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.7);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:20px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.4s;
+
+  z-index:999;
+}
+
+.modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-content{
+  background:var(--branco);
+
+  width:100%;
+  max-width:700px;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  position:relative;
+
+  animation:subir 0.4s ease;
+}
+
+@keyframes subir{
+
+  from{
+    transform:translateY(40px);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+
+}
+
+.modal-content h2{
+  color:var(--verde);
+  margin-bottom:20px;
+}
+
+.modal-content p{
+  line-height:1.8;
+}
+
+.fonte{
+  margin-top:30px;
+
+  background:#e8f5e9;
+
+  padding:15px;
+
+  border-radius:15px;
+}
+
+.fechar{
+  position:absolute;
+
+  top:20px;
+  right:20px;
+
+  border:none;
+
+  background:transparent;
+
+  font-size:20px;
+
+  cursor:pointer;
+}
