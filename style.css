@@ -710,3 +710,23 @@ footer h2{
   font-size:12px;
   color:#2e7d32;
 }
+
+
+.aplicacao,
+.fontes{
+  max-width:800px;
+  margin:40px auto;
+  background:var(--branco);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.aplicacao ul{
+  margin-top:15px;
+  padding-left:20px;
+}
+
+.aplicacao li{
+  margin-bottom:10px;
+}
