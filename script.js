@@ -246,3 +246,27 @@ window.addEventListener("load", () => {
   }, 1200);
 
 });
+
+
+let tocando = false;
+
+function toggleMusica(){
+
+  const musica = document.getElementById("musica");
+  const btn = document.getElementById("btnMusica");
+
+  if(!tocando){
+
+    musica.play();
+    btn.innerHTML = "⏸ Pausar música";
+    tocando = true;
+
+  } else {
+
+    musica.pause();
+    btn.innerHTML = "🎵 Tocar música";
+    tocando = false;
+
+  }
+
+}
