@@ -1,167 +1,95 @@
-// ========================================
-// DADOS DOS CURSOS
-// ========================================
-const cursos = [
-  {
-    titulo: "HTML e CSS",
-    descricao: "Aprenda a criar sites estruturados e estilizados com HTML e CSS.",
-    imagem: "https://via.placeholder.com/300x200?text=HTML+CSS"
-  },
-  {
-    titulo: "JavaScript Básico",
-    descricao: "Introdução à programação dinâmica com JavaScript.",
-    imagem: "https://via.placeholder.com/300x200?text=JS+Basico"
-  },
-  {
-    titulo: "React Avançado",
-    descricao: "Construa interfaces interativas com React e Hooks.",
-    imagem: "https://via.placeholder.com/300x200?text=React+Avancado"
-  },
-  {
-    titulo: "Node.js e APIs",
-    descricao: "Aprenda a criar APIs RESTful usando Node.js e Express.",
-    imagem: "https://via.placeholder.com/300x200?text=Node+API"
-  }
-];
+// script.js
 
-// Renderizar cursos dinamicamente
-const cursosContainer = document.querySelector(".cursos-grid");
-cursos.forEach(curso => {
-  const card = document.createElement("article");
-  card.classList.add("curso-card");
-  card.innerHTML = `
-    <img src="${curso.imagem}" alt="${curso.titulo}">
-    <h3>${curso.titulo}</h3>
-    <p>${curso.descricao}</p>
-  `;
-  cursosContainer.appendChild(card);
+// LOADER
+
+window.addEventListener("load", () => {
+
+  document.querySelector(".loader")
+  .classList.add("hide");
+
 });
 
-// ========================================
-// CARROSSEL DE GALERIA
-// ========================================
-const slides = [
-  "https://via.placeholder.com/600x300?text=Projeto+1",
-  "https://via.placeholder.com/600x300?text=Projeto+2",
-  "https://via.placeholder.com/600x300?text=Projeto+3"
-];
+// MENSAGEM
 
-const track = document.querySelector(".carousel-track");
-let currentIndex = 0;
+function mostrarMensagem(){
 
-// Criar slides dinamicamente
-slides.forEach(src => {
-  const slide = document.createElement("img");
-  slide.src = src;
-  slide.alt = "Projeto da galeria";
-  track.appendChild(slide);
-});
+  const msg = document.getElementById("mensagem");
 
-// Função para atualizar a posição do carrossel
-function updateCarousel() {
-  const slideWidth = track.querySelector("img").clientWidth;
-  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  msg.innerHTML =
+  "🌱 A agricultura sustentável ajuda a preservar o meio ambiente e garante alimentos para as futuras gerações.";
+
 }
 
-// Botões do carrossel
-document.querySelector(".prev").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateCarousel();
-});
+// MODO ESCURO
 
-document.querySelector(".next").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateCarousel();
-});
+const modoBtn = document.getElementById("modoBtn");
 
-// ========================================
-// FAQ / ACORDEÃO
-// ========================================
-const faqs = [
-  {
-    pergunta: "Qual é a duração dos cursos?",
-    resposta: "Cada curso tem duração média de 4 a 8 semanas, dependendo do nível."
-  },
-  {
-    pergunta: "Preciso de experiência prévia?",
-    resposta: "Não! Todos os cursos iniciam do básico ao avançado."
-  },
-  {
-    pergunta: "Receberei certificado?",
-    resposta: "Sim, ao concluir cada curso você recebe um certificado digital."
+modoBtn.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+
+    modoBtn.innerHTML = "☀️ Modo Claro";
+
+  }else{
+
+    modoBtn.innerHTML = "🌙 Modo Escuro";
+
   }
-];
 
-const accordion = document.querySelector(".accordion");
-
-faqs.forEach(faq => {
-  const item = document.createElement("div");
-  item.classList.add("accordion-item");
-
-  const header = document.createElement("button");
-  header.classList.add("accordion-header");
-  header.textContent = faq.pergunta;
-  header.setAttribute("aria-expanded", "false");
-
-  const content = document.createElement("div");
-  content.classList.add("accordion-content");
-  content.innerHTML = `<p>${faq.resposta}</p>`;
-
-  header.addEventListener("click", () => {
-    const expanded = header.getAttribute("aria-expanded") === "true";
-    header.setAttribute("aria-expanded", String(!expanded));
-    content.style.maxHeight = !expanded ? content.scrollHeight + "px" : "0";
-  });
-
-  item.appendChild(header);
-  item.appendChild(content);
-  accordion.appendChild(item);
 });
 
-// ========================================
-// CONTROLE DE FONTE
-// ========================================
-const body = document.body;
-let currentFontSize = parseInt(getComputedStyle(body).fontSize);
+// REVEAL
 
-document.getElementById("increase-font").addEventListener("click", () => {
-  currentFontSize += 2;
-  body.style.fontSize = currentFontSize + "px";
-});
+function revelar(){
 
-document.getElementById("decrease-font").addEventListener("click", () => {
-  currentFontSize = Math.max(12, currentFontSize - 2);
-  body.style.fontSize = currentFontSize + "px";
-});
+  const reveals = document.querySelectorAll(".reveal");
 
-// ========================================
-// MODO ALTO CONTRASTE
-// ========================================
-document.getElementById("toggle-contrast").addEventListener("click", () => {
-  body.classList.toggle("high-contrast");
-});
+  reveals.forEach((element) => {
 
-// ========================================
-// SCROLL REVEAL SIMPLES
-// ========================================
-const sections = document.querySelectorAll("main section");
+    const janela = window.innerHeight;
+    const topo = element.getBoundingClientRect().top;
 
-const revealSection = (entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-      observer.unobserve(entry.target);
+    if(topo < janela - 100){
+
+      element.classList.add("active");
+
     }
+
   });
-};
 
-const observer = new IntersectionObserver(revealSection, {
-  threshold: 0.1
-});
+}
 
-sections.forEach(section => {
-  section.style.opacity = 0;
-  section.style.transform = "translateY(50px)";
-  observer.observe(section);
-});
+window.addEventListener("scroll", revelar);
+
+revelar();
+
+// CONTADORES
+
+function animarContador(id, maximo){
+
+  let numero = 0;
+
+  const contador = document.getElementById(id);
+
+  const intervalo = setInterval(() => {
+
+    numero += Math.ceil(maximo / 100);
+
+    if(numero >= maximo){
+
+      numero = maximo;
+
+      clearInterval(intervalo);
+    }
+
+    contador.innerHTML = numero.toLocaleString();
+
+  }, 30);
+
+}
+
+animarContador("contador1", 5000);
+animarContador("contador2", 12000);
+animarContador("contador3", 350);
