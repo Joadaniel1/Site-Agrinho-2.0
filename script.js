@@ -151,3 +151,23 @@ function calcularAgua(){
   + economia + " litros de água por ano.";
 
 }
+
+
+function revealScroll(){
+
+  const items = document.querySelectorAll(".reveal");
+
+  items.forEach(el => {
+
+    const top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealScroll);
+revealScroll();
