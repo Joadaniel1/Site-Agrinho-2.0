@@ -4,48 +4,270 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quiz Agrinho</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+body{
+
+margin:0;
+padding:0;
+
+font-family:Arial, sans-serif;
+
+background:
+linear-gradient(135deg,#1b5e20,#4caf50);
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.quiz-container{
+
+background:white;
+
+width:90%;
+max-width:700px;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+text-align:center;
+
+}
+
+h1{
+
+color:#1b5e20;
+
+margin-bottom:30px;
+
+}
+
+#question{
+
+font-size:24px;
+
+margin-bottom:30px;
+
+}
+
+.btn{
+
+display:block;
+
+width:100%;
+
+margin-top:15px;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2e7d32;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+background:#1b5e20;
+
+transform:scale(1.02);
+
+}
+
+#score{
+
+margin-top:25px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1b5e20;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<nav class="navbar">
+<div class="quiz-container">
 
-<div class="logo">🌱 AGRINHO</div>
+<h1>🧠 Quiz Agro Sustentável</h1>
 
-<ul class="menu">
-
-<li><a href="index.html">Início</a></li>
-<li><a href="quiz.html">Quiz</a></li>
-
-</ul>
-
-</nav>
-
-<section class="section">
-
-<h2 class="title">
-🧠 Quiz Agro Sustentável
+<h2 id="question">
+Carregando...
 </h2>
 
-<div class="quiz-box">
+<div id="answers"></div>
 
-<h3 id="pergunta"></h3>
-
-<div id="respostas"></div>
-
-<p id="pontuacao"></p>
+<p id="score"></p>
 
 </div>
 
-</section>
+<script>
 
-<script src="quiz.js"></script>
+const quiz = [
+
+{
+
+question:
+"Qual prática ajuda o meio ambiente?",
+
+answers:[
+
+"Queimadas",
+
+"Uso consciente da água",
+
+"Desmatamento",
+
+"Poluição"
+
+],
+
+correct:1
+
+},
+
+{
+
+question:
+"Qual energia é sustentável?",
+
+answers:[
+
+"Petróleo",
+
+"Solar",
+
+"Carvão",
+
+"Diesel"
+
+],
+
+correct:1
+
+},
+
+{
+
+question:
+"O que ajuda o agro sustentável?",
+
+answers:[
+
+"Poluição",
+
+"Tecnologia",
+
+"Desmatamento",
+
+"Queimadas"
+
+],
+
+correct:1
+
+}
+
+];
+
+let current = 0;
+let points = 0;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const score =
+document.getElementById("score");
+
+function loadQuestion(){
+
+answers.innerHTML = "";
+
+question.innerHTML =
+quiz[current].question;
+
+quiz[current].answers.forEach(
+(answer,index)=>{
+
+const button =
+document.createElement("button");
+
+button.innerHTML = answer;
+
+button.classList.add("btn");
+
+button.onclick = () => check(index);
+
+answers.appendChild(button);
+
+}
+);
+
+}
+
+function check(index){
+
+if(index === quiz[current].correct){
+
+points++;
+
+}
+
+current++;
+
+if(current < quiz.length){
+
+loadQuestion();
+
+}else{
+
+question.innerHTML =
+"🎉 Quiz finalizado!";
+
+answers.innerHTML = "";
+
+score.innerHTML =
+"Você fez " + points +
+" pontos!";
+
+}
+
+}
+
+loadQuestion();
+
+</script>
 
 </body>
 
