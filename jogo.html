@@ -3,66 +3,276 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-  <title>Mini Game - Agrinho</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Mini Game Agrinho</title>
+
+<style>
+
+body{
+
+margin:0;
+overflow:hidden;
+
+font-family:Arial, sans-serif;
+
+background:
+linear-gradient(135deg,#1b5e20,#4caf50);
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.game-container{
+
+background:white;
+
+width:90%;
+max-width:900px;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+text-align:center;
+
+}
+
+h1{
+
+color:#1b5e20;
+
+}
+
+.info{
+
+display:flex;
+justify-content:center;
+gap:40px;
+
+font-size:22px;
+
+margin-bottom:20px;
+
+}
+
+.game-area{
+
+position:relative;
+
+width:100%;
+height:500px;
+
+background:#e8f5e9;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.item{
+
+position:absolute;
+
+font-size:50px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+user-select:none;
+
+}
+
+.item:hover{
+
+transform:scale(1.2);
+
+}
+
+.start-btn{
+
+margin-top:20px;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2e7d32;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.start-btn:hover{
+
+background:#1b5e20;
+
+transform:scale(1.05);
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<div class="game-container">
 
-  <nav class="navbar">
+<h1>🎮 Salve o Meio Ambiente</h1>
 
-    <div class="logo">🌱 AGRINHO</div>
+<div class="info">
 
-    <ul class="menu">
+<p>
+⭐ Pontos:
+<span id="score">0</span>
+</p>
 
-      <li><a href="index.html">Início</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-      <li><a href="jogo.html">Jogo</a></li>
+<p>
+⏳ Tempo:
+<span id="time">30</span>s
+</p>
 
-    </ul>
+</div>
 
-  </nav>
+<div class="game-area" id="gameArea">
 
-  <!-- GAME -->
+</div>
 
-  <section class="section">
+<button class="start-btn"
+onclick="startGame()">
 
-    <h2 class="title reveal">
-      🎮 Salve o Meio Ambiente
-    </h2>
+▶ Iniciar Jogo
 
-    <div class="game-info reveal">
+</button>
 
-      <p>
-        🌟 Pontos:
-        <span id="pontos">0</span>
-      </p>
+</div>
 
-      <p>
-        ⏳ Tempo:
-        <span id="tempo">30</span>s
-      </p>
+<script>
 
-    </div>
+const gameArea =
+document.getElementById("gameArea");
 
-    <div class="game-area reveal" id="gameArea">
+const scoreText =
+document.getElementById("score");
 
-    </div>
+const timeText =
+document.getElementById("time");
 
-    <button class="start-btn" onclick="iniciarJogo()">
-      ▶ Iniciar Jogo
-    </button>
+let score = 0;
+let time = 30;
 
-  </section>
+let running = false;
 
-  <script src="jogo.js"></script>
+function startGame(){
+
+if(running) return;
+
+running = true;
+
+score = 0;
+time = 30;
+
+scoreText.innerHTML = score;
+timeText.innerHTML = time;
+
+const timer = setInterval(()=>{
+
+time--;
+
+timeText.innerHTML = time;
+
+if(time <= 0){
+
+clearInterval(timer);
+
+running = false;
+
+alert(
+"🎉 Fim de jogo! Você fez "
++ score +
+" pontos!"
+);
+
+}
+
+},1000);
+
+spawnItem();
+
+}
+
+function spawnItem(){
+
+if(!running) return;
+
+const item =
+document.createElement("div");
+
+const good =
+Math.random() > 0.3;
+
+item.classList.add("item");
+
+item.innerHTML =
+good ? "🌳" : "🗑️";
+
+item.style.left =
+Math.random()*90 + "%";
+
+item.style.top =
+Math.random()*80 + "%";
+
+item.onclick = ()=>{
+
+if(good){
+
+score++;
+
+}else{
+
+score--;
+
+}
+
+scoreText.innerHTML = score;
+
+item.remove();
+
+};
+
+gameArea.appendChild(item);
+
+setTimeout(()=>{
+
+item.remove();
+
+},2000);
+
+setTimeout(spawnItem,800);
+
+}
+
+</script>
 
 </body>
 
