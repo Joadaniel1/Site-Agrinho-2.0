@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mini Game - Agrinho</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">🌱 AGRINHO</div>
+
+    <ul class="menu">
+
+      <li><a href="index.html">Início</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="jogo.html">Jogo</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- GAME -->
+
+  <section class="section">
+
+    <h2 class="title reveal">
+      🎮 Salve o Meio Ambiente
+    </h2>
+
+    <div class="game-info reveal">
+
+      <p>
+        🌟 Pontos:
+        <span id="pontos">0</span>
+      </p>
+
+      <p>
+        ⏳ Tempo:
+        <span id="tempo">30</span>s
+      </p>
+
+    </div>
+
+    <div class="game-area reveal" id="gameArea">
+
+    </div>
+
+    <button class="start-btn" onclick="iniciarJogo()">
+      ▶ Iniciar Jogo
+    </button>
+
+  </section>
+
+  <script src="jogo.js"></script>
+
+</body>
+
+</html>
