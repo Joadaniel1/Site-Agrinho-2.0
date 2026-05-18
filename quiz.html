@@ -3,56 +3,49 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Agrinho</title>
 
-  <title>Quiz Agro Sustentável</title>
-
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<nav class="navbar">
 
-  <nav class="navbar">
+<div class="logo">🌱 AGRINHO</div>
 
-    <div class="logo">🌱 AGRINHO</div>
+<ul class="menu">
 
-    <ul class="menu">
+<li><a href="index.html">Início</a></li>
+<li><a href="quiz.html">Quiz</a></li>
 
-      <li><a href="index.html">Início</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
+</ul>
 
-    </ul>
+</nav>
 
-  </nav>
+<section class="section">
 
-  <!-- QUIZ -->
+<h2 class="title">
+🧠 Quiz Agro Sustentável
+</h2>
 
-  <section class="section">
+<div class="quiz-box">
 
-    <h2 class="title reveal">
-      🧠 Quiz Agro Sustentável
-    </h2>
+<h3 id="pergunta"></h3>
 
-    <div class="quiz-box reveal">
+<div id="respostas"></div>
 
-      <h3 id="pergunta">
-        Carregando pergunta...
-      </h3>
+<p id="pontuacao"></p>
 
-      <div id="respostas"></div>
+</div>
 
-      <p id="pontuacao"></p>
+</section>
 
-    </div>
-
-  </section>
-
-  <script src="quiz.js"></script>
+<script src="quiz.js"></script>
 
 </body>
 
