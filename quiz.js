@@ -1,68 +1,47 @@
 
 const perguntas = [
 
-  {
+{
 
-    pergunta:
-    "Qual prática ajuda o meio ambiente?",
+pergunta:
+"Qual prática ajuda o meio ambiente?",
 
-    respostas: [
+respostas: [
 
-      "Desmatamento",
+"Queimadas",
 
-      "Queimadas",
+"Uso consciente da água",
 
-      "Uso consciente da água",
+"Poluição",
 
-      "Poluição"
+"Desmatamento"
 
-    ],
+],
 
-    correta: 2
+correta: 1
 
-  },
+},
 
-  {
+{
 
-    pergunta:
-    "Qual energia é sustentável?",
+pergunta:
+"Qual energia é sustentável?",
 
-    respostas: [
+respostas: [
 
-      "Carvão",
+"Solar",
 
-      "Solar",
+"Petróleo",
 
-      "Petróleo",
+"Carvão",
 
-      "Diesel"
+"Diesel"
 
-    ],
+],
 
-    correta: 1
+correta: 0
 
-  },
-
-  {
-
-    pergunta:
-    "O que ajuda o agro sustentável?",
-
-    respostas: [
-
-      "Desperdício",
-
-      "Poluição",
-
-      "Tecnologia",
-
-      "Queimadas"
-
-    ],
-
-    correta: 2
-
-  }
+}
 
 ];
 
@@ -80,55 +59,56 @@ document.getElementById("pontuacao");
 
 function carregarPergunta(){
 
-  respostas.innerHTML = "";
+respostas.innerHTML = "";
 
-  pergunta.innerHTML =
-  perguntas[atual].pergunta;
+pergunta.innerHTML =
+perguntas[atual].pergunta;
 
-  perguntas[atual].respostas.forEach(
-    (resp, index) => {
+perguntas[atual].respostas.forEach(
+(resp, index) => {
 
-      const btn =
-      document.createElement("button");
+const btn =
+document.createElement("button");
 
-      btn.innerHTML = resp;
+btn.innerHTML = resp;
 
-      btn.classList.add("quiz-btn");
+btn.classList.add("quiz-btn");
 
-      btn.onclick = () => verificar(index);
+btn.onclick = () => verificar(index);
 
-      respostas.appendChild(btn);
+respostas.appendChild(btn);
 
-    }
-  );
+}
+
+);
 
 }
 
 function verificar(index){
 
-  if(index === perguntas[atual].correta){
+if(index === perguntas[atual].correta){
 
-    pontos++;
+pontos++;
 
-  }
+}
 
-  atual++;
+atual++;
 
-  if(atual < perguntas.length){
+if(atual < perguntas.length){
 
-    carregarPergunta();
+carregarPergunta();
 
-  } else {
+} else {
 
-    pergunta.innerHTML =
-    "🎉 Quiz finalizado!";
+pergunta.innerHTML =
+"🎉 Quiz finalizado!";
 
-    respostas.innerHTML = "";
+respostas.innerHTML = "";
 
-    pontuacao.innerHTML =
-    "Você fez " + pontos + " pontos!";
+pontuacao.innerHTML =
+"Você fez " + pontos + " pontos!";
 
-  }
+}
 
 }
 
